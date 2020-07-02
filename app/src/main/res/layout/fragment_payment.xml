@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".reservation.fragments.paymentFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <Spinner
+            android:id="@+id/spinner_gender"
+            style="@style/spinner_style_2"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/spinner_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_mehod"
+            style="@style/AppText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.07"
+            app:layout_constraintHorizontal_bias="0.9"
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/AppText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/payment_mehod"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_gender"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_gender" />
+
+        <Spinner
+            android:id="@+id/spinner_insur"
+            style="@style/spinner_style_2"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/spinner_background"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_gender"
+            app:layout_constraintStart_toStartOf="@+id/spinner_gender"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/AppText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/payment_mehod"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_insur"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_insur" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText6"
+            style="@style/roundedInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_insur"
+            app:layout_constraintStart_toStartOf="@+id/spinner_insur"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputEditText6"
+            app:layout_constraintVertical_bias="0.13">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView8"
+                style="@style/AppText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reservation_price"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.89"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.18" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView9"
+                style="@style/AppText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/add_price"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/materialTextView8"
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView8" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView12"
+                style="@style/AppText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/final_price"
+                app:layout_constraintEnd_toEndOf="@+id/materialTextView9"
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView9" />
+
+            <!--            colons -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:text=":"
+                app:layout_constraintBottom_toBottomOf="@+id/materialTextView8"
+                app:layout_constraintEnd_toStartOf="@+id/materialTextView8"
+                app:layout_constraintTop_toTopOf="@+id/materialTextView8" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=":"
+                app:layout_constraintBottom_toBottomOf="@+id/materialTextView9"
+                app:layout_constraintEnd_toEndOf="@+id/materialTextView10"
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView10" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=":"
+                app:layout_constraintBottom_toBottomOf="@+id/materialTextView12"
+                app:layout_constraintEnd_toEndOf="@+id/materialTextView11"
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView11" />
+
+            <!--            -->
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:text="500 جنية"
+                app:layout_constraintBottom_toBottomOf="@+id/materialTextView10"
+                app:layout_constraintEnd_toStartOf="@+id/materialTextView10"
+                app:layout_constraintTop_toTopOf="@+id/materialTextView10"
+
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:text="50 جنية"
+                app:layout_constraintBottom_toBottomOf="@+id/materialTextView11"
+                app:layout_constraintEnd_toStartOf="@+id/materialTextView11"
+                app:layout_constraintTop_toTopOf="@+id/materialTextView11" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50 جنية"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                app:layout_constraintBottom_toBottomOf="@+id/materialTextView14"
+                app:layout_constraintEnd_toStartOf="@+id/materialTextView14"
+                app:layout_constraintTop_toTopOf="@+id/materialTextView14" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton"
+            style="@style/PrimaryButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textInputEditText6"
+            app:layout_constraintStart_toStartOf="@+id/textInputEditText6"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

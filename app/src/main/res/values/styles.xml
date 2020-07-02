@@ -1,0 +1,100 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="PrimaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:width">200dp</item>
+        <item name="shapeAppearanceOverlay">@style/MyShapeAppearance</item>
+    </style>
+
+    <style name="secondaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:width">200dp</item>
+        <item name="shapeAppearanceOverlay">@style/MyShapeAppearance</item>
+    </style>
+
+
+
+    <style name="roundedInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="shapeAppearance">@style/MyShapeAppearance</item>
+        <item name="borderWidth">2dp</item>
+    </style>
+
+    <style name="MyShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <style name="halfRoundedInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="shapeAppearance">@style/halfRoundedShape</item>
+        <item name="boxStrokeColor">@color/grayLight</item>
+    </style>
+
+    <style name="halfRoundedShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+
+
+
+<!--    text -->
+    <style name="AppText" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+<!--    spinner -->
+    <style name="spinner_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:popupBackground">#DFFFFFFF</item>
+    </style>
+
+    <style name="spinner_style_2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:popupBackground">@color/gray</item>
+    </style>
+
+<!--    card view -->
+
+    <style name="selectedCardView">
+        <item name="android:backgroundTint" tools:targetApi="lollipop">@color/colorPrimary</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style>
+
+    <style name="selectedCardText">
+        <item name="android:textColor" tools:targetApi="lollipop">@color/white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="notSelectedCardView">
+        <item name="android:backgroundTint" tools:targetApi="lollipop">@color/white</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style>
+
+    <style name="notSelectedText">
+        <item name="android:backgroundTint" tools:targetApi="lollipop">@color/black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+</resources>

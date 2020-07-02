@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_afia">اول تطبيق لحجز مواعيد بكل سهولة وبساطة</string>
+    <string name="enter">دخول</string>
+    <string name="create_account">انشاء حساب</string>
+    <string name="app_name">Afia</string>
+    <string name="offers">العروض</string>
+    <string name="my_reservisan">حجوزاتى</string>
+    <string name="home">الرئيسية</string>
+    <string name="search_for_hospital">ابحث عن مستشفى</string>
+    <string name="hospital_name">مركز السودان للعيون</string>
+    <string name="hospital_address">شارع محمد نجيب</string>
+    <string name="user_name">محمد صلاح</string>
+    <string name="work_days">ايام العمل</string>
+    <string name="work_times">اوقات العمل</string>
+    <string name="reserve_now">احجز الأن</string>
+    <string name="patient_name">اسم المريض</string>
+    <string name="age">العمر</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="next">التالى</string>
+    <string name="Specialization">التخصص</string>
+    <string name="choose_doctor">أختر طبيب</string>
+    <string name="choose_day">اختر يوم</string>
+    <string name="reservationDate">تاريخ الحجز</string>
+    <string name="reservation_time">زمن الحجز</string>
+    <string name="payment_mehod">طريقة الدفع</string>
+    <string name="reservation_price">قيمة الحجز</string>
+    <string name="add_price">قيمة مضافة</string>
+    <string name="final_price">المبلغ الكلى</string>
+    <string name="done_reservation">تم الحجز</string>
+    <string name="permission_rationale_location">rationale</string>
+</resources>

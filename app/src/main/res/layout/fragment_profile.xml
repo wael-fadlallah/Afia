@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile.profileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/appCompatImageView3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/anon"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/user_name"
+            android:textSize="24sp"
+            android:textColor="@color/gray"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatImageView3"
+            app:layout_constraintStart_toStartOf="@+id/appCompatImageView3"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView3" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="40dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialTextView2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/info_about_account"
+                    android:textColor="@color/gray"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="32dp"
+                    android:text="@string/user_name"
+                    android:singleLine="true"
+                    android:textColor="@color/gray"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView3"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView3"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView3" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEditText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:inputType="number"
+                    android:maxLength="12"
+                    android:text="@string/myPhone"
+                    android:singleLine="true"
+                    android:textColor="@color/gray"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputEditText"
+                    app:layout_constraintStart_toEndOf="@+id/textInputEditText3"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEditText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="@string/phone_key"
+                    app:layout_constraintBottom_toBottomOf="@+id/textInputEditText2"
+                    app:layout_constraintStart_toStartOf="@+id/textInputEditText"
+                    app:layout_constraintTop_toTopOf="@+id/textInputEditText2" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/materialRadioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:text="@string/female"
+                    android:textColor="@color/gray"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/materialRadioButton"
+                    app:layout_constraintEnd_toStartOf="@+id/materialRadioButton"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textInputEditText2"
+                    app:layout_constraintStart_toStartOf="@+id/textInputEditText3"
+                    app:layout_constraintTop_toTopOf="@+id/materialRadioButton"
+                    tools:targetApi="jelly_bean_mr1" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/materialRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:text="@string/male"
+                    android:textColor="@color/gray"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/materialTextView4"
+                    app:layout_constraintEnd_toStartOf="@+id/materialTextView4"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/materialRadioButton2"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView4"
+                    tools:targetApi="jelly_bean_mr1" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/gender"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/materialRadioButton"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputEditText2" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEditText4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/email"
+                    android:textColor="@color/gray"
+                    android:singleLine="true"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputEditText2"
+                    app:layout_constraintStart_toStartOf="@+id/textInputEditText3"
+                    app:layout_constraintTop_toBottomOf="@+id/materialRadioButton2" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/PrimaryButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/save"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputEditText4"
+                    app:layout_constraintStart_toStartOf="@+id/textInputEditText4"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputEditText4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
