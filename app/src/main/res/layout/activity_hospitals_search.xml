@@ -3,24 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/maps_relative"
     >
-
     <data>
         <variable
             name="mapViewModel"
-            type="com.example.afia.maps.MapViewModel" />
+            type="com.example.afia.ui.maps.MapViewModel" />
     </data>
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
+        <androidx.fragment.app.FragmentContainerView
+            xmlns:map="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".maps.HospitalsSearchActivity" />
+            tools:context=".ui.maps.HospitalsSearchActivity" />
 
 <!--        <include-->
 <!--            layout="@layout/hospital_map_overley"-->

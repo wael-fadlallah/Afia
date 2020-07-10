@@ -3,7 +3,7 @@
     <data>
         <variable
             name="homeViewModel"
-            type="com.example.afia.home.HomeFragment"
+            type="com.example.afia.ui.home.HomeFragment"
             />
     </data>
 

@@ -3,7 +3,7 @@ package com.example.afia
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.afia.dashboard.Dashboard
+import com.example.afia.ui.dashboard.Dashboard
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

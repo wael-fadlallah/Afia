@@ -6,7 +6,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.afia.home.HomeFragment"
+        android:name="com.example.afia.ui.home.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/mainToHospitals"
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/hospitalsFragment"
-        android:name="com.example.afia.hospitals.HospitalsFragment"
+        android:name="com.example.afia.ui.hospitals.HospitalsFragment"
         android:label="fragment_hospitals"
         tools:layout="@layout/fragment_hospitals" >
         <action
@@ -27,26 +27,26 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.afia.profile.profileFragment"
+        android:name="com.example.afia.ui.profile.profileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.example.afia.userAccount.accountFragment"
+        android:name="com.example.afia.ui.userAccount.accountFragment"
         android:label="fragment_account"
         tools:layout="@layout/fragment_account" />
     <fragment
         android:id="@+id/notificationFragment"
-        android:name="com.example.afia.notification.notificationFragment"
+        android:name="com.example.afia.ui.notification.notificationFragment"
         android:label="notificationFragment" />
     <fragment
         android:id="@+id/offersFragment"
-        android:name="com.example.afia.offers.offersFragment"
+        android:name="com.example.afia.ui.offers.offersFragment"
         android:label="fragment_notification"
         tools:layout="@layout/fragment_notification" />
     <fragment
         android:id="@+id/hospitalDetalisFragment"
-        android:name="com.example.afia.hospitalsDetails.hospitalDetalisFragment"
+        android:name="com.example.afia.ui.hospitalsDetails.hospitalDetalisFragment"
         android:label="fragment_hospital_detalis"
         tools:layout="@layout/fragment_hospital_detalis" />
 </navigation>

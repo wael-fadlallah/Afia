@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".reservation.ReservationActivity">
+    tools:context=".ui.reservation.ReservationActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
@@ -16,7 +16,7 @@
 
     </com.google.android.material.tabs.TabLayout>
 
-    <com.example.afia.extensions.SwipeLockableViewPager
+    <com.example.afia.ui.extensions.SwipeLockableViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"

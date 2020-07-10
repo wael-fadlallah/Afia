@@ -10,7 +10,7 @@
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".profile.profileFragment">
+    tools:context=".ui.profile.profileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

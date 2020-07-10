@@ -12,7 +12,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    tools:context=".hospitals.HospitalsFragment">
+    tools:context=".ui.hospitals.HospitalsFragment">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageView"
@@ -32,22 +32,32 @@
             />
 
 </FrameLayout>
-        <com.google.android.material.textfield.TextInputLayout
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/hospitalsSearchInput"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="20dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            style="@style/roundedInput"-->
+<!--            >-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:drawableStart="@drawable/ic_search_black_24dp"-->
+<!--                    android:drawableLeft="@drawable/ic_search_black_24dp"-->
+<!--                    android:drawableTint="@color/colorPrimary"-->
+<!--                    android:hint="@string/search_for_hospital"-->
+<!--                    />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/hospitalsSearchInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
-            style="@style/roundedInput"
-            >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_search_black_24dp"
-                    android:drawableLeft="@drawable/ic_search_black_24dp"
-                    android:drawableTint="@color/colorPrimary"
-                    android:hint="@string/search_for_hospital"
-                    />
-        </com.google.android.material.textfield.TextInputLayout>
+            style="@style/secondaryButton"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/search_for_hospital"
+            android:drawableLeft="@drawable/ic_search_black_24dp" />
 
         <ScrollView
             android:layout_width="match_parent"
