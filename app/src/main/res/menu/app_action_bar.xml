@@ -20,7 +20,8 @@
         />
 
     <item
-        android:title="@string/add"
+        android:title="@string/reservation"
+        android:id="@+id/hospitalsFragment"
         android:icon="@drawable/ic_add_black_24dp"
         app:showAsAction="always"
         tools:ignore="AlwaysShowAction"
@@ -35,9 +36,9 @@
         />
 
     <item
-        android:id="@+id/userProfilePhoto"
+        android:id="@+id/profileFragment"
         app:showAsAction="always"
-        android:title="@string/user_photo"
+        android:title="@string/account"
         android:icon="@drawable/ic_profile_holder"
         />
 

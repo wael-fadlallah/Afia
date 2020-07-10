@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    >
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".profile.profileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/backgroundColor"
-
         >
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -31,24 +36,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/user_name"
-            android:textSize="24sp"
             android:textColor="@color/gray"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/appCompatImageView3"
             app:layout_constraintStart_toStartOf="@+id/appCompatImageView3"
             app:layout_constraintTop_toBottomOf="@+id/appCompatImageView3" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:cardCornerRadius="40dp"
             app:cardUseCompatPadding="true"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/materialTextView2">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginVertical="40dp"
 
                 >
 
@@ -73,8 +81,8 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="32dp"
                     android:layout_marginRight="32dp"
-                    android:text="@string/user_name"
                     android:singleLine="true"
+                    android:text="@string/user_name"
                     android:textColor="@color/gray"
                     app:layout_constraintEnd_toEndOf="@+id/materialTextView3"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView3"
@@ -89,8 +97,8 @@
                     android:layout_marginTop="8dp"
                     android:inputType="number"
                     android:maxLength="12"
-                    android:text="@string/myPhone"
                     android:singleLine="true"
+                    android:text="@string/myPhone"
                     android:textColor="@color/gray"
                     app:layout_constraintEnd_toEndOf="@+id/textInputEditText"
                     app:layout_constraintStart_toEndOf="@+id/textInputEditText3"
@@ -143,9 +151,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="@string/gender"
+                    android:textColor="@color/gray"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:textColor="@color/gray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/materialRadioButton"
@@ -157,9 +165,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
+                    android:singleLine="true"
                     android:text="@string/email"
                     android:textColor="@color/gray"
-                    android:singleLine="true"
                     app:layout_constraintEnd_toEndOf="@+id/textInputEditText2"
                     app:layout_constraintStart_toStartOf="@+id/textInputEditText3"
                     app:layout_constraintTop_toBottomOf="@+id/materialRadioButton2" />
@@ -181,3 +189,4 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
+</ScrollView>

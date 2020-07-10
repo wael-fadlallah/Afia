@@ -33,18 +33,18 @@
 
         <activity
             android:name=".maps.HospitalsSearchActivity"
-            android:label="@string/title_activity_hospitals_search"></activity>
+            android:label="@string/title_activity_hospitals_search" />
         <activity android:name=".reservation.ReservationActivity" />
-        <activity android:name=".dashboard.Dashboard" />
+        <activity android:name=".dashboard.Dashboard" android:windowSoftInputMode="adjustPan" />
         <activity android:name=".sginup.SginUpActivity" />
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"/>
     </application>
 
 </manifest>

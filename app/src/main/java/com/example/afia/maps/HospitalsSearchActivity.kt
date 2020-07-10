@@ -9,10 +9,13 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.afia.R
 import com.example.afia.data.HospitalLocation
 import com.example.afia.data.MapHospitalsData
+import com.example.afia.databinding.ActivityHospitalsSearchBinding
 import com.example.afia.utils.PermissionUtils.isPermissionGranted
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -21,8 +24,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
-import kotlinx.android.synthetic.main.hospital_map_overley.*
+import androidx.lifecycle.ViewModelProviders
 
 class HospitalsSearchActivity : AppCompatActivity(),
         GoogleMap.OnMyLocationButtonClickListener,
@@ -46,31 +48,54 @@ class HospitalsSearchActivity : AppCompatActivity(),
 
     private lateinit var mData: ArrayList<MapHospitalsData>
 
+    private lateinit var binding : ActivityHospitalsSearchBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_hospitals_search)
+
+        val binding : ActivityHospitalsSearchBinding = DataBindingUtil.setContentView(this,R.layout.activity_hospitals_search)
+        binding.setLifecycleOwner(this)
+        val mapViewModel = ViewModelProviders.of(this).get(MapViewModel::class.java)
+        binding.mapViewModel = MapViewModel(application)
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
 
-        mData = ArrayList(listOf(
-                MapHospitalsData("test", HospitalLocation(15.495600, 32.633220)),
-                MapHospitalsData("new", HospitalLocation(15.495939,32.632120)), //15.495939, 32.632120
-                MapHospitalsData("other", HospitalLocation(15.493013,32.629363)) // 15.493013, 32.629363
-        ))
-        mapHospitals_recyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        mapHospitals_recyclerView.adapter = MapAdapter(this,mData,object : MapAdapter.OnClickListner{
+//        mData = ArrayList(listOf(
+//                MapHospitalsData('1',"test", HospitalLocation(15.495600, 32.633220)),
+//                MapHospitalsData('2',"new", HospitalLocation(15.495939,32.632120)), //15.495939, 32.632120
+//                MapHospitalsData('3',"other", HospitalLocation(15.493013,32.629363)) // 15.493013, 32.629363
+//        ))
 
-            override fun hospitl_click(mapLocation: HospitalLocation) {
+        val adapter = MapAdapter(this,object : MapAdapter.OnClickListner{
+
+            override fun hospitl_click(mapLocation: HospitalLocation, itemPosition: Int) {
+
                 Toast.makeText(this@HospitalsSearchActivity,"hospital item click !",Toast.LENGTH_LONG).show()
                 mMap.moveCamera(
                         CameraUpdateFactory.newLatLngZoom( LatLng(mapLocation.lat,mapLocation.lan) , DEFAULT_ZOOM.toFloat())
                 )
+
+                (binding.mapHospitalsRecyclerView.layoutManager as LinearLayoutManager ).scrollToPositionWithOffset(itemPosition,10)
+
             }
 
         })
+        binding.mapHospitalsRecyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        binding.mapHospitalsRecyclerView.adapter = adapter
+
+        mapViewModel.hospitals.observe(this, Observer {
+            adapter.submitList(it)
+        })
+
+
+
+
+
+
+
     }
 
     /**
@@ -113,10 +138,12 @@ class HospitalsSearchActivity : AppCompatActivity(),
         moveCameraToCurrentLocation()
 
         // add hospitals location to the map
-        mData.forEach {
-            val hospital = LatLng(it.location.lat,it.location.lan)
-            mMap.addMarker(MarkerOptions().position(hospital).title(it.title))
-        }
+
+        // todo move to viewmodel
+//        mData.forEach {
+//            val hospital = LatLng(it.location.lat,it.location.lan)
+//            mMap.addMarker(MarkerOptions().position(hospital).title(it.title))
+//        }
 
     }
 

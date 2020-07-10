@@ -1,26 +1,33 @@
-package com.example.afia
+package com.example.afia.home
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.example.afia.R
+import com.example.afia.databinding.FragmentHomeBinding
 import com.example.afia.maps.HospitalsSearchActivity
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 /**
  * A simple [Fragment] subclass.
  */
+
 class HomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        view.hospitals_box.setOnClickListener {
+        val binding : FragmentHomeBinding  = DataBindingUtil.inflate(inflater , R.layout.fragment_home,container,false)
+        binding.lifecycleOwner = this
+
+        val view = binding.root
+        view.hospitals_box?.setOnClickListener {
             val intent = Intent(context, HospitalsSearchActivity::class.java)
             startActivity(intent)
         }

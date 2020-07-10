@@ -6,7 +6,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.afia.HomeFragment"
+        android:name="com.example.afia.home.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/mainToHospitals"

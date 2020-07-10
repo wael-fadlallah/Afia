@@ -29,4 +29,6 @@
     <string name="final_price">المبلغ الكلى</string>
     <string name="done_reservation">تم الحجز</string>
     <string name="permission_rationale_location">rationale</string>
+    <string name="reservation">حجز</string>
+    <string name="account">الحساب</string>
 </resources>

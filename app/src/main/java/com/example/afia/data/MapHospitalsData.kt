@@ -1,8 +1,10 @@
 package com.example.afia.data
 
+
 data class MapHospitalsData(
-        val title : String,
-        val location : HospitalLocation
+        val id: Char,
+        val title: String,
+        val location: HospitalLocation
 )
 
 data class HospitalLocation(

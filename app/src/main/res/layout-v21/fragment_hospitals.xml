@@ -42,9 +42,11 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_search_black_24dp"
+                    android:drawableLeft="@drawable/ic_search_black_24dp"
                     android:drawableTint="@color/colorPrimary"
                     android:hint="@string/search_for_hospital"
-                    tools:ignore="UnusedAttribute" />
+                    />
         </com.google.android.material.textfield.TextInputLayout>
 
         <ScrollView

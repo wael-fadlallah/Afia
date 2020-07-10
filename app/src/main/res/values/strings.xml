@@ -57,4 +57,6 @@
     <string name="permission_required_toast">premission required</string>
     <string name="permission_rationale_location">rationale</string>
     <string name="location_permission_denied">permission denied</string>
+    <string name="reservation">حجز</string>
+    <string name="account">الحساب</string>
 </resources>

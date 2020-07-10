@@ -31,7 +31,7 @@ class Dashboard : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
         menuInflater.inflate(R.menu.app_action_bar,menu)
-        menu?.getItem(2)?.setIcon(R.drawable.ic_profile_holder)
+        menu?.getItem(0)?.setIcon(R.drawable.ic_profile_holder)
         return true
     }
 
