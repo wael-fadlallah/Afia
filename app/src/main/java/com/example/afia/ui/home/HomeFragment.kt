@@ -28,11 +28,22 @@ class HomeFragment : Fragment() {
         binding.lifecycleOwner = this
 
         val view = binding.root
+
         view.hospitals_box?.setOnClickListener {
               NavHostFragment.findNavController(this).navigate(R.id.mainToHospitals)
 //            val intent = Intent(context, HospitalsSearchActivity::class.java)
 //            startActivity(intent)
         }
+
+        view.notificationBox.setOnClickListener {
+            NavHostFragment.findNavController(this).navigate(R.id.action_homeFragment_to_notificationFragment)
+        }
+
+        view.offersBox.setOnClickListener {
+            NavHostFragment.findNavController(this).navigate(R.id.action_homeFragment_to_offersFragment)
+        }
+
+
         // Inflate the layout for this fragment
         return view
     }

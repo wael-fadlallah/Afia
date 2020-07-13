@@ -3,7 +3,7 @@ package com.example.afia.ui.data
 
 data class MapHospitalsData(
         val id: Char,
-        val title: String,
+        val name: String,
         val location: HospitalLocation
 )
 

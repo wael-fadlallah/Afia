@@ -13,18 +13,18 @@ class ReservationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_reservation)
 
 //        init tabLayout
-        tabLayout.addTab(tabLayout.newTab().setText("تفاصيل المريض"))
-        tabLayout.addTab(tabLayout.newTab().setText("اختيار طبيب"))
-        tabLayout.addTab(tabLayout.newTab().setText("تاريخ الحجز"))
         tabLayout.addTab(tabLayout.newTab().setText("الدفع"))
+        tabLayout.addTab(tabLayout.newTab().setText("تاريخ الحجز"))
+        tabLayout.addTab(tabLayout.newTab().setText("اختيار طبيب"))
+        tabLayout.addTab(tabLayout.newTab().setText("تفاصيل المريض"))
         tabLayout.tabGravity = TabLayout.GRAVITY_FILL
 
-        val defaulTabItem = tabLayout.getTabAt(0)!!.select()
+        val defaulTabItem = tabLayout.getTabAt(3)!!.select()
 
 //      init view pager
         val pagerAdapter = PagerAdapter(supportFragmentManager)
         viewPager.adapter = pagerAdapter
-
+        viewPager.currentItem = 3
         tabLayout.addOnTabSelectedListener( object : TabLayout.OnTabSelectedListener{
             override fun onTabReselected(tab: TabLayout.Tab?) {
 

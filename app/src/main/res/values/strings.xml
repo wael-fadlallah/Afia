@@ -59,4 +59,6 @@
     <string name="location_permission_denied">permission denied</string>
     <string name="reservation">حجز</string>
     <string name="account">الحساب</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

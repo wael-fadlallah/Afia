@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
 
         loginViewModel.loginBtnClicked.observe( this, Observer {
             if(it) {
-                Toast.makeText(this, "login button click !", Toast.LENGTH_LONG).show()
+//                Toast.makeText(this, "login button click !", Toast.LENGTH_LONG).show()
 
                 val intent = Intent(this,Dashboard::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)

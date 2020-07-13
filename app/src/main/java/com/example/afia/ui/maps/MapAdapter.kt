@@ -1,15 +1,20 @@
 package com.example.afia.ui.maps
 
 import android.content.Context
+import android.content.Intent
+import android.nfc.Tag
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.afia.MainActivity
 import com.example.afia.R
 import com.example.afia.ui.data.HospitalLocation
 import com.example.afia.ui.data.MapHospitalsData
+import com.example.afia.ui.reservation.ReservationActivity
 import kotlinx.android.synthetic.main.hospital_map_item.view.*
 
 
@@ -25,10 +30,10 @@ class MapAdapter(val context : Context ,val onClickListner: OnClickListner )  :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val location = getItem(position)
+        val hospital = getItem(position)
         holder.itemView.hospital_logo.setOnClickListener{
 
-            onClickListner.hospitl_click(location.location , position)
+            onClickListner.hospitl_click(hospital.location , position)
 
             val layoutParams = it.getLayoutParams()
             if (it.reserveNowBtn.visibility != View.GONE){
@@ -42,26 +47,23 @@ class MapAdapter(val context : Context ,val onClickListner: OnClickListner )  :
             }
             it.setLayoutParams(layoutParams)
 
-            //
-
-//            fun hideAllBut(itemId: Char) {
-//                currentList.iterator().apply {
-//                    while (hasNext()) next().apply {
-//                        if (id != itemId) currentList.indexOf(this).also {
-//                            layout.recycler.getChildAt(it).visibility = View.GONE
-//                            layout.recycler.adapter?.notifyItemChanged(it)
-//                        } } }
-//            }
-
-//            linearLayoutManager.scrollToPositionWithOffset(2, 20)
-
-
         }
 
-    }
-    class ViewHolder(v : View) : RecyclerView.ViewHolder(v){
-    }
+        holder.bind(hospital)
 
+    }
+    class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+
+        fun bind(hospital : MapHospitalsData){
+            itemView.hospitalName.text = hospital.name
+
+            itemView.reserveNowBtn.setOnClickListener {
+                val intent = Intent(itemView.context,ReservationActivity::class.java)
+                itemView.context.startActivity(intent)
+
+            }
+        }
+    }
 }
 
 

@@ -27,7 +27,7 @@ class patientFragment : Fragment() {
 
         view.nextBtn.setOnClickListener {
             val tab = activity?.findViewById<TabLayout>(R.id.tabLayout)
-            tab?.getTabAt(1)?.select()
+            tab?.getTabAt(2)?.select()
         }
         // Inflate the layout for this fragment
         return view

@@ -9,10 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-<!--        <ScrollView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            >-->
+
         <fragment
             android:id="@+id/nav_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
@@ -22,7 +19,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navGraph="@navigation/bottom_nav_graph" />
-<!--        </ScrollView>-->
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navigation_bar"
@@ -30,13 +26,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:background="@drawable/action_bar_round_background"
-            app:itemIconTint="@color/gray"
-            app:itemTextColor="@color/gray"
+            app:itemIconTint="@color/selected_menu_item"
+            app:itemTextColor="@color/selected_menu_item"
+            app:itemRippleColor="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/app_action_bar" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    </FrameLayout>
+</FrameLayout>

@@ -51,7 +51,7 @@ class reservationDetailsFragment : Fragment() {
         }
 
         view.nextBtn.setOnClickListener {
-            activity?.findViewById<TabLayout>(R.id.tabLayout)?.getTabAt(3)?.select()
+            activity?.findViewById<TabLayout>(R.id.tabLayout)?.getTabAt(0)?.select()
         }
         // Inflate the layout for this fragment
         return view

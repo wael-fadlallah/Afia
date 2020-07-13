@@ -15,6 +15,12 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popUpTo="@id/bottom_nav_graph"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_offersFragment"
+            app:destination="@id/offersFragment" />
     </fragment>
     <fragment
         android:id="@+id/hospitalsFragment"
@@ -49,4 +55,18 @@
         android:name="com.example.afia.ui.hospitalsDetails.hospitalDetalisFragment"
         android:label="fragment_hospital_detalis"
         tools:layout="@layout/fragment_hospital_detalis" />
+    <fragment
+        android:id="@+id/reservationSuccess"
+        android:name="com.example.afia.ui.reservation.reservationSuccess"
+        android:label="fragment_reservation_success"
+        tools:layout="@layout/reservation_success" />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.afia.ui.reservation.fragments.paymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" >
+        <action
+            android:id="@+id/action_paymentFragment_to_reservationSuccess"
+            app:destination="@id/reservationSuccess" />
+    </fragment>
 </navigation>

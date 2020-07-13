@@ -25,6 +25,7 @@
                 android:layout_marginTop="8dp"
                 />
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/hospitalName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hospital_name"

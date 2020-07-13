@@ -21,7 +21,7 @@ class doctorFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_doctor, container, false)
 
         view.nextBtn.setOnClickListener {
-            activity?.findViewById<TabLayout>(R.id.tabLayout)?.getTabAt(2)?.select()
+            activity?.findViewById<TabLayout>(R.id.tabLayout)?.getTabAt(1)?.select()
         }
 
         // Inflate the layout for this fragment

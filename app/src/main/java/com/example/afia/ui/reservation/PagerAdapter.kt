@@ -11,14 +11,14 @@ import com.example.afia.ui.reservation.fragments.reservationDetailsFragment
 internal class PagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm!!){
     override fun getItem(position: Int): Fragment {
         return when(position){
-            0 -> patientFragment()
-            1 -> doctorFragment()
-            2 -> reservationDetailsFragment()
-            3 -> paymentFragment()
+            0 -> paymentFragment()
+            1 -> reservationDetailsFragment()
+            2 -> doctorFragment()
+            3 -> patientFragment()
             else -> patientFragment()
         }
     }
 
-    override fun getCount(): Int = 5
+    override fun getCount(): Int = 4
 
 }

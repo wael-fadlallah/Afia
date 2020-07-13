@@ -2,20 +2,24 @@ package com.example.afia.ui.maps
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.location.Location
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.afia.R
+import com.example.afia.databinding.ActivityHospitalsSearchBinding
 import com.example.afia.ui.data.HospitalLocation
 import com.example.afia.ui.data.MapHospitalsData
-import com.example.afia.databinding.ActivityHospitalsSearchBinding
 import com.example.afia.ui.utils.PermissionUtils.isPermissionGranted
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -23,8 +27,11 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptor
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
-import androidx.lifecycle.ViewModelProviders
+import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.costom_marker.view.*
 
 class HospitalsSearchActivity : AppCompatActivity(),
         GoogleMap.OnMyLocationButtonClickListener,
@@ -62,13 +69,6 @@ class HospitalsSearchActivity : AppCompatActivity(),
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-
-//        mData = ArrayList(listOf(
-//                MapHospitalsData('1',"test", HospitalLocation(15.495600, 32.633220)),
-//                MapHospitalsData('2',"new", HospitalLocation(15.495939,32.632120)), //15.495939, 32.632120
-//                MapHospitalsData('3',"other", HospitalLocation(15.493013,32.629363)) // 15.493013, 32.629363
-//        ))
-
         val adapter = MapAdapter(this,object : MapAdapter.OnClickListner{
 
             override fun hospitl_click(mapLocation: HospitalLocation, itemPosition: Int) {
@@ -86,16 +86,11 @@ class HospitalsSearchActivity : AppCompatActivity(),
         binding.mapHospitalsRecyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         binding.mapHospitalsRecyclerView.adapter = adapter
 
+
         mapViewModel.hospitals.observe(this, Observer {
             adapter.submitList(it)
+            mData = it
         })
-
-
-
-
-
-
-
     }
 
     /**
@@ -140,10 +135,27 @@ class HospitalsSearchActivity : AppCompatActivity(),
         // add hospitals location to the map
 
         // todo move to viewmodel
-//        mData.forEach {
-//            val hospital = LatLng(it.location.lat,it.location.lan)
-//            mMap.addMarker(MarkerOptions().position(hospital).title(it.title))
-//        }
+        mData.forEach {
+            val hospital = LatLng(it.location.lat,it.location.lan)
+//            mMap.addMarker(MarkerOptions().position(hospital).title(it.name)).showInfoWindow()
+
+//            val iconGoogleMap = Icon
+
+//            val image: ImageView = findViewById<View>(R.id.main_image) as ImageView
+
+            val tv: LinearLayout = this.layoutInflater.inflate(R.layout.costom_marker, null, false) as LinearLayout
+            tv.title.text = it.name
+            tv.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
+            tv.layout(0, 0, tv.getMeasuredWidth(), tv.getMeasuredHeight())
+
+            tv.setDrawingCacheEnabled(true)
+            tv.buildDrawingCache()
+            val bm = tv.getDrawingCache()
+
+            mMap.addMarker( MarkerOptions().position(hospital).icon( BitmapDescriptorFactory.fromBitmap(bm) ) )
+
+        }
 
     }
 

@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
     <data>
         <variable
             name="homeViewModel"
             type="com.example.afia.ui.home.HomeFragment"
             />
     </data>
-
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    >
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     >
         <androidx.cardview.widget.CardView
             android:id="@+id/materialCardView"
@@ -39,6 +44,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/notificationBox"
                         android:layout_width="120dp"
                         android:layout_height="80dp"
                         android:layout_margin="5dp"
@@ -48,7 +54,6 @@
                         android:padding="10dp"
 
                         >
-
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -62,6 +67,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/offersBox"
                         android:layout_width="120dp"
                         android:layout_height="80dp"
                         android:layout_margin="5dp"
@@ -90,6 +96,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/reservationBox"
                         android:layout_width="120dp"
                         android:layout_height="80dp"
                         android:layout_margin="5dp"
@@ -111,6 +118,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/contactBox"
                         android:layout_width="120dp"
                         android:layout_height="80dp"
                         android:layout_margin="5dp"
@@ -203,4 +211,5 @@
         </androidx.cardview.widget.CardView>
 
 </FrameLayout>
+</ScrollView>
 </layout>
