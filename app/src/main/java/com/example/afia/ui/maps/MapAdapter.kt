@@ -2,18 +2,15 @@ package com.example.afia.ui.maps
 
 import android.content.Context
 import android.content.Intent
-import android.nfc.Tag
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.afia.MainActivity
 import com.example.afia.R
-import com.example.afia.ui.data.HospitalLocation
-import com.example.afia.ui.data.MapHospitalsData
+import com.example.afia.data.HospitalLocation
+import com.example.afia.data.MapHospitalsData
 import com.example.afia.ui.reservation.ReservationActivity
 import kotlinx.android.synthetic.main.hospital_map_item.view.*
 

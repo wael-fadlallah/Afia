@@ -3,8 +3,8 @@ package com.example.afia.ui.maps
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.example.afia.ui.data.HospitalLocation
-import com.example.afia.ui.data.MapHospitalsData
+import com.example.afia.data.HospitalLocation
+import com.example.afia.data.MapHospitalsData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

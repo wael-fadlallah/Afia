@@ -30,183 +30,188 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="32dp"
                 android:layout_marginVertical="30dp"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:gravity="center">
+
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:id="@+id/notificationBox"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/offersBox"
+                    app:layout_constraintEnd_toStartOf="@+id/offersBox"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/offersBox">
 
-                    <LinearLayout
-                        android:id="@+id/notificationBox"
-                        android:layout_width="120dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="5dp"
-                        android:background="@color/colorPrimary"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="10dp"
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_notification_alert" />
 
-                        >
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_notification_alert" />
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/notification"
-                            android:textColor="@android:color/white" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/offersBox"
-                        android:layout_width="120dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="5dp"
-                        android:background="@color/colorPrimary"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_box" />
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/offers"
-                            android:textColor="@android:color/white" />
-                    </LinearLayout>
-
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notification"
+                        android:textColor="@android:color/white" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:id="@+id/offersBox"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/contactBox"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/notificationBox"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <LinearLayout
-                        android:id="@+id/reservationBox"
-                        android:layout_width="120dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="5dp"
-                        android:background="@color/colorPrimary"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="10dp">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_box" />
 
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_timer" />
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/my_reservisan"
-                            android:textColor="@android:color/white" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/contactBox"
-                        android:layout_width="120dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="5dp"
-                        android:background="@color/colorPrimary"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_message" />
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/contact_us"
-                            android:textColor="@android:color/white" />
-                    </LinearLayout>
-
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/offers"
+                        android:textColor="@android:color/white" />
                 </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/reservationBox"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/contactBox"
+                    app:layout_constraintEnd_toStartOf="@+id/contactBox"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/contactBox">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_timer" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_reservisan"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/contactBox"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="37dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/hospitals_box"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/reservationBox"
+                    app:layout_constraintTop_toBottomOf="@+id/offersBox">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_message" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/contact_us"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/hospitals_box"
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:layout_marginHorizontal="18dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="32dp"
                     android:elevation="20dp"
                     android:gravity="center"
                     app:cardCornerRadius="20dp"
+                    app:layout_constraintBottom_toTopOf="@+id/clinics_box"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/contactBox"
                     tools:targetApi="lollipop">
 
-                    <FrameLayout
+
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        >
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/hospotal_overley" />
 
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/hospotal_overley" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hospitals"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:layout_gravity="center"
+                        />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="@string/hospitals"
-                            android:textColor="@android:color/white"
-                            android:textSize="22sp" />
-                    </FrameLayout>
 
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/clinics_box"
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:layout_marginHorizontal="18dp"
-                    android:layout_marginBottom="32dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_height="100dp"
                     android:elevation="20dp"
                     android:gravity="center"
                     app:cardCornerRadius="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/hospitals_box"
+                    app:layout_constraintStart_toStartOf="@+id/hospitals_box"
+                    app:layout_constraintTop_toBottomOf="@+id/hospitals_box"
                     tools:targetApi="lollipop">
 
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
 
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/doctor_overly" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/doctor_overly" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="@string/clinic"
-                            android:textColor="@android:color/white"
-                            android:textSize="22sp" />
-                    </FrameLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/clinic"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:layout_gravity="center"
+                        />
+
 
                 </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 

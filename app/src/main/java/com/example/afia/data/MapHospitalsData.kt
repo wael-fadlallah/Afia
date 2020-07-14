@@ -1,4 +1,4 @@
-package com.example.afia.ui.data
+package com.example.afia.data
 
 
 data class MapHospitalsData(

@@ -2,7 +2,6 @@ package com.example.afia.ui.maps
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.location.Location
 import android.os.Bundle
 import android.util.Log
@@ -18,8 +17,8 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.afia.R
 import com.example.afia.databinding.ActivityHospitalsSearchBinding
-import com.example.afia.ui.data.HospitalLocation
-import com.example.afia.ui.data.MapHospitalsData
+import com.example.afia.data.HospitalLocation
+import com.example.afia.data.MapHospitalsData
 import com.example.afia.ui.utils.PermissionUtils.isPermissionGranted
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -27,7 +26,6 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptor
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
