@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.example.afia.R
 import com.example.afia.databinding.ActivitySginUpBinding
-import com.example.afia.ui.extensions.BaseActivity
+import com.example.afia.extensions.BaseActivity
 import com.example.afia.ui.login.LoginActivity
 
 class SginUpActivity : BaseActivity() {

@@ -18,8 +18,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.afia.R
 import com.example.afia.databinding.ActivityHospitalsSearchBinding
 import com.example.afia.data.HospitalLocation
-import com.example.afia.data.MapHospitalsData
-import com.example.afia.ui.utils.PermissionUtils.isPermissionGranted
+import com.example.afia.data.HospitalData
+import com.example.afia.utils.PermissionUtils.isPermissionGranted
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -51,7 +51,7 @@ class HospitalsSearchActivity : AppCompatActivity(),
     private lateinit var mMap: GoogleMap
     private lateinit var mFusedLocationProviderClient:FusedLocationProviderClient
 
-    private lateinit var mData: ArrayList<MapHospitalsData>
+    private lateinit var mData: ArrayList<HospitalData>
 
     private lateinit var binding : ActivityHospitalsSearchBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,9 +72,10 @@ class HospitalsSearchActivity : AppCompatActivity(),
             override fun hospitl_click(mapLocation: HospitalLocation, itemPosition: Int) {
 
                 Toast.makeText(this@HospitalsSearchActivity,"hospital item click !",Toast.LENGTH_LONG).show()
-                mMap.moveCamera(
-                        CameraUpdateFactory.newLatLngZoom( LatLng(mapLocation.lat,mapLocation.lan) , DEFAULT_ZOOM.toFloat())
-                )
+//                mMap.moveCamera(
+//                        CameraUpdateFactory.newLatLngZoom( LatLng(mapLocation.lat,mapLocation.lan) , DEFAULT_ZOOM.toFloat())
+//                todo fix the camera
+//                )
 
                 (binding.mapHospitalsRecyclerView.layoutManager as LinearLayoutManager ).scrollToPositionWithOffset(itemPosition,10)
 
@@ -133,27 +134,29 @@ class HospitalsSearchActivity : AppCompatActivity(),
         // add hospitals location to the map
 
         // todo move to viewmodel
-        mData.forEach {
-            val hospital = LatLng(it.location.lat,it.location.lan)
-//            mMap.addMarker(MarkerOptions().position(hospital).title(it.name)).showInfoWindow()
 
-//            val iconGoogleMap = Icon
-
-//            val image: ImageView = findViewById<View>(R.id.main_image) as ImageView
-
-            val tv: LinearLayout = this.layoutInflater.inflate(R.layout.costom_marker, null, false) as LinearLayout
-            tv.title.text = it.name
-            tv.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
-                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
-            tv.layout(0, 0, tv.getMeasuredWidth(), tv.getMeasuredHeight())
-
-            tv.setDrawingCacheEnabled(true)
-            tv.buildDrawingCache()
-            val bm = tv.getDrawingCache()
-
-            mMap.addMarker( MarkerOptions().position(hospital).icon( BitmapDescriptorFactory.fromBitmap(bm) ) )
-
-        }
+//        todo fix
+//        mData.forEach {
+//            val hospital = LatLng(it.location.lat,it.location.lan)
+////            mMap.addMarker(MarkerOptions().position(hospital).title(it.name)).showInfoWindow()
+//
+////            val iconGoogleMap = Icon
+//
+////            val image: ImageView = findViewById<View>(R.id.main_image) as ImageView
+//
+//            val tv: LinearLayout = this.layoutInflater.inflate(R.layout.costom_marker, null, false) as LinearLayout
+//            tv.title.text = it.name
+//            tv.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+//                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
+//            tv.layout(0, 0, tv.getMeasuredWidth(), tv.getMeasuredHeight())
+//
+//            tv.setDrawingCacheEnabled(true)
+//            tv.buildDrawingCache()
+//            val bm = tv.getDrawingCache()
+//
+//            mMap.addMarker( MarkerOptions().position(hospital).icon( BitmapDescriptorFactory.fromBitmap(bm) ) )
+//
+//        }
 
     }
 

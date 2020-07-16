@@ -1,4 +1,4 @@
-package com.example.afia.ui.extensions
+package com.example.afia.extensions
 
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity

@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.afia.R
 import com.example.afia.data.HospitalLocation
-import com.example.afia.data.MapHospitalsData
+import com.example.afia.data.HospitalData
 import com.example.afia.ui.reservation.ReservationActivity
 import kotlinx.android.synthetic.main.hospital_map_item.view.*
 
 
 class MapAdapter(val context : Context ,val onClickListner: OnClickListner )  :
-        ListAdapter<MapHospitalsData,MapAdapter.ViewHolder>(mapHospitalsDiffCallback()){
+        ListAdapter<HospitalData,MapAdapter.ViewHolder>(mapHospitalsDiffCallback()){
 
     interface OnClickListner{
         fun hospitl_click(mapLocation: HospitalLocation , itemPosition : Int)
@@ -51,7 +51,7 @@ class MapAdapter(val context : Context ,val onClickListner: OnClickListner )  :
     }
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
 
-        fun bind(hospital : MapHospitalsData){
+        fun bind(hospital : HospitalData){
             itemView.hospitalName.text = hospital.name
 
             itemView.reserveNowBtn.setOnClickListener {
@@ -64,12 +64,12 @@ class MapAdapter(val context : Context ,val onClickListner: OnClickListner )  :
 }
 
 
-class mapHospitalsDiffCallback : DiffUtil.ItemCallback<MapHospitalsData>(){
-    override fun areItemsTheSame(oldItem: MapHospitalsData, newItem: MapHospitalsData): Boolean {
+class mapHospitalsDiffCallback : DiffUtil.ItemCallback<HospitalData>(){
+    override fun areItemsTheSame(oldItem: HospitalData, newItem: HospitalData): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: MapHospitalsData, newItem: MapHospitalsData): Boolean {
+    override fun areContentsTheSame(oldItem: HospitalData, newItem: HospitalData): Boolean {
         return oldItem == newItem
     }
 

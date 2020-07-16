@@ -1,4 +1,4 @@
-package com.example.afia.ui.extensions
+package com.example.afia.extensions
 
 import android.content.Context
 import android.util.AttributeSet

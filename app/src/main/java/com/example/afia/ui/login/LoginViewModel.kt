@@ -15,7 +15,7 @@ class LoginViewModel : ViewModel() {
     }
 
     fun login(){
-        Log.i(MainActivity.TAG,"CLICK")
+//        Log.i(MainActivity.TAG,"CLICK")
         loginBtnClicked.value = true
     }
 

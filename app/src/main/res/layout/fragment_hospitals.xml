@@ -1,74 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
-<FrameLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+        <data>
+                <variable
+                    name="HospitalsViewModel"
+                    type="com.example.afia.ui.hospitals.HospitalsViewModel" />
+        </data>
 
-    tools:context=".ui.hospitals.HospitalsFragment">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_intersection_1"
-            android:scaleType="fitXY"
-            />
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hospitals"
-            android:textSize="26sp"
-            android:textColor="@android:color/white"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"
-            />
+            android:orientation="vertical">
 
-</FrameLayout>
+                <FrameLayout
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            android:id="@+id/hospitalsSearchInput"-->
-<!--            style="@style/roundedInput"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="20dp"-->
-<!--            android:layout_marginTop="20dp">-->
-
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:drawableTint="@color/colorPrimary"-->
-<!--                    android:hint="@string/search_for_hospital"-->
-<!--                    tools:ignore="UnusedAttribute" />-->
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/hospitalsSearchInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/secondaryButton"
-            android:layout_marginHorizontal="16dp"
-            android:text="@string/search_for_hospital"
-            />
-
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-                >
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/hospitals_recyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
-                    />
-        </ScrollView>
-</LinearLayout>
+                    tools:context=".ui.hospitals.HospitalsFragment">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_intersection_1"
+                            android:scaleType="fitXY" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hospitals"
+                            android:textSize="26sp"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="80dp" />
+
+                </FrameLayout>
+
+                <!--        <com.google.android.material.textfield.TextInputLayout-->
+                <!--            android:id="@+id/hospitalsSearchInput"-->
+                <!--            style="@style/roundedInput"-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:layout_marginHorizontal="20dp"-->
+                <!--            android:layout_marginTop="20dp">-->
+
+                <!--                <com.google.android.material.textfield.TextInputEditText-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:drawableTint="@color/colorPrimary"-->
+                <!--                    android:hint="@string/search_for_hospital"-->
+                <!--                    tools:ignore="UnusedAttribute" />-->
+                <!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/hospitalsSearchInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/secondaryButton"
+                    android:layout_marginHorizontal="16dp"
+                    android:text="@string/search_for_hospital" />
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/hospitals_recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+                            />
+                </ScrollView>
+        </LinearLayout>
+</layout>

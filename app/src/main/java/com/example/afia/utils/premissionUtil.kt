@@ -1,4 +1,4 @@
-package com.example.afia.ui.utils
+package com.example.afia.utils
 
 // Copyright 2020 Google LLC
 //
