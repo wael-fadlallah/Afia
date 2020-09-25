@@ -38,21 +38,20 @@
             app:layout_constraintVertical_bias="0.19999999" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/materialTextView"
+            android:id="@+id/hospitalAddress"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/hospital_address"
             app:layout_constraintEnd_toEndOf="@+id/hospitalname"
-            app:layout_constraintStart_toStartOf="@+id/hospitalname"
             app:layout_constraintTop_toBottomOf="@+id/hospitalname" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@+id/materialTextView"
-            app:layout_constraintStart_toStartOf="@+id/materialTextView"
-            app:layout_constraintTop_toBottomOf="@+id/materialTextView"
+            app:layout_constraintEnd_toEndOf="@+id/hospitalAddress"
+            app:layout_constraintStart_toStartOf="@+id/hospitalAddress"
+            app:layout_constraintTop_toBottomOf="@+id/hospitalAddress"
             android:gravity="end"
             >
 

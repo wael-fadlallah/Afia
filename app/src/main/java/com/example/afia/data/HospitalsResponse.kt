@@ -9,7 +9,8 @@ data class HospitalsResponse(
 data class HospitalData(
         val id: String,
         val name: String,
-        val location: HospitalLocation
+        val location: HospitalLocation,
+        val formattedAddress : String
 )
 
 data class HospitalLocation(

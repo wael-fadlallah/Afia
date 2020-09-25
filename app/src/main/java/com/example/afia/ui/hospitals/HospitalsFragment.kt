@@ -42,7 +42,6 @@ class HospitalsFragment : Fragment() {
 
         binding.hospitalsRecyclerView.adapter = hospitalsAdapter
 
-
         binding.hospitalsSearchInput.setOnClickListener {
             val intent = Intent(context, HospitalsSearchActivity::class.java)
             startActivity(intent)

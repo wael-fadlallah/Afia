@@ -26,7 +26,8 @@ class hospitalsAdapter(private val fragment:HospitalsFragment, val hospitals: Ar
         }
 
 //        todo fix hospital name length bug
-//        holder.itemView.hospitalname.text = hospital?.name
+        holder.itemView.hospitalname.text = hospital?.name
+        holder.itemView.hospitalAddress.text = hospital?.formattedAddress
     }
     class hospitalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     }
